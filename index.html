@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Biología</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <h1>Práctica 2.</h1>
+    </div>
+    <nav>
+        <a href="index.html">Página principal</a>
+        <span class="dot">·</span>
+        <a href="portada.html">Portada</a>
+        <span class="dot">·</span>
+        <a href="introduccion.html">Introducción</a>
+        <span class="dot">·</span>
+        <a href="objetivos.html">Objetivos</a>
+        <span class="dot">·</span>
+        <a href="materiales.html">Materiales y equipo</a>
+        <span class="dot">·</span>
+        <!-- Menú desplegable dentro de "Desarrollo" -->
+        <div class="dropdown">
+            <button class="dropbtn">Desarrollo</button>
+            <div class="dropdown-content">
+                <a href="actividad1.html">Actividad 1</a>
+                <a href="actividad2.html">Actividad 2</a>
+                <a href="actividad3.html">Actividad 3</a>
+                <a href="actividad4.html">Actividad 4</a>
+            </div>
+        </div>
+        <span class="dot">·</span>
+        <a href="cuestionario.html">Cuestionario</a>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Identificación de la composición química de la materia viva</h1>
+        <div class="underline"></div>
+    </div>
+</section>
+
+<!-- Scroll Button -->
+<button onclick="scrollToBottom()" class="scroll-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="7 18 12 13 17 18"></polyline>
+        <line x1="12" y1="5" x2="12" y2="18"></line>
+    </svg>
+</button>
+
+<!-- Main Content -->
+<main id="explore">
+
+<!-- Sección de Actividades -->
+<section class="activities-section">
+    <div class="activity-card">
+        <img src="imagen6.jpeg" alt="Actividad 1: Identificación del agua" />
+        <h3>Actividad 1. Identificación del agua</h3>
+    </div>
+    <div class="activity-card">
+        <img src="imagen7.jpeg" alt="Actividad 2: Carbohidratos" />
+        <h3>Actividad 2. Identificación de carbohidratos</h3>
+    </div>
+    <div class="activity-card">
+        <img src="imagen8.jpeg" alt="Actividad 3: Lípidos" />
+        <h3>Actividad 3. Identificación de lípidos</h3>
+    </div>
+    <div class="activity-card">
+        <img src="imagen9.jpeg" alt="Actividad 4: Proteínas" />
+        <h3>Actividad 4. Identificación de proteínas</h3>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Carrera de Biología - Universidad El Salvador. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

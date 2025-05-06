@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales y Equipo</title>
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .logo h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header nav a,
+        header nav span.active {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover,
+        header nav .active {
+            color: #007ba8;
+        }
+
+        header .dot {
+            color: white;
+            margin: 0 10px;
+        }
+
+        header .search-icon {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            color: white;
+            font-size: 16px;
+            padding: 14px 16px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            color: #007ba8;
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e8f5e9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #007ba8;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('imagen13.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .underline {
+            width: 100px;
+            height: 5px;
+            background-color: #007ba8;
+            margin: 10px auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 120px auto 0 auto;
+        }
+
+        .content-section {
+            background-color: #007ba8; 
+            padding: 20px;
+        }
+
+        .materials, .equipment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .materials img, .equipment img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .materials h2, .equipment h2 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .materials ul, .equipment ul {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .materials li, .equipment li {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        footer {
+            background-color: #007ba8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <h1>Práctica 2.</h1>
+    </div>
+    <nav>
+        <a href="index.html">Página principal</a>
+        <span class="dot">·</span>
+        <a href="portada.html">Portada</a>
+        <span class="dot">·</span>
+        <a href="introduccion.html">Introducción</a>
+        <span class="dot">·</span>
+        <a href="objetivos.html">Objetivos</a>
+        <span class="dot">·</span>
+        <a href="materiales.html" class="active">Materiales y equipo</a>
+        <span class="dot">·</span>
+        <!-- Menú desplegable dentro de "Desarrollo" -->
+        <div class="dropdown">
+            <button class="dropbtn">Desarrollo</button>
+            <div class="dropdown-content">
+                <a href="actividad1.html">Actividad 1</a>
+                <a href="actividad2.html">Actividad 2</a>
+                <a href="actividad3.html">Actividad 3</a>
+                <a href="actividad4.html">Actividad 4</a>
+            </div>
+        </div>
+        <span class="dot">·</span>
+        <a href="cuestionario.html">Cuestionario</a>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Materiales y Equipo</h1>
+        <div class="underline"></div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main>
+    <section class="content-section">
+        <div class="materials">
+            <img src="imagen11.jpeg" alt="Materiales">
+            <h2>Materiales</h2>
+            <ul>
+                <li>Aceite vegetal (una cucharada sopera)</li>
+                <li>Clara de huevo (traer un huevo)</li>
+                <li>Dos cucharadas soperas de leche</li>
+                <li>Dos cucharas soperas de extracto, ya sea de pescado o pollo</li>
+                <li>Una pasa</li>
+                <li>Acetona</li>
+                <li>Yuca, papa y pan (trozos pequeños)</li>
+                <li>Una semilla de maíz</li>
+                <li>Un limón</li>
+                <li>Hojas de clavel</li>
+                <li>Tirro y marcador</li>
+                <li>Papel toalla o higiénico</li>
+                <li>Mascarilla quirúrgica</li>
+                <li>Apuntes de clase</li>
+            </ul>
+        </div>
+        <div class="equipment">
+            <img src="imagen12.jpg" alt="Equipo">
+            <h2>Equipo</h2>
+            <ul>
+                <li>Microscopio óptico compuesto</li>
+                <li>Portaobjetos y cubreobjetos</li>
+                <li>Sudán III</li>
+                <li>Solución de almidón</li>
+                <li>Reactivo de Lugol</li>
+                <li>Reactivo de Benedict</li>
+                <li>Beaker de 400ml</li>
+                <li>Tubos de ensayo</li>
+                <li>Reactivo de Biuret-Na(OH) 20% y CuSO4 1%</li>
+                <li>Pinzas para tubo de ensayo</li>
+                <li>Mechero Busen o cocina</li>
+                <li>Goteros</li>
+                <li>Agua destilada</li>
+                <li>Gradilla para tubos de ensayo</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Carrera de Biología - Universidad El Salvador. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

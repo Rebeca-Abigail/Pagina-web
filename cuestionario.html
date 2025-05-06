@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .logo h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header nav a,
+        header nav span.active {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover,
+        header nav .active {
+            color: #007ba8;
+        }
+
+        header .dot {
+            color: white;
+            margin: 0 10px;
+        }
+
+        header .search-icon {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            color: white;
+            font-size: 16px;
+            padding: 14px 16px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            color: #007ba8;
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e8f5e9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #007ba8;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('imagen14.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .underline {
+            width: 100px;
+            height: 5px;
+            background-color: #007ba8;
+            margin: 10px auto;
+        }
+
+        /* Scroll Button */
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007ba8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .scroll-button:hover {
+            background-color: #005f73;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 120px auto 0 auto;
+        }
+
+        .content-section {
+            background-color: #007ba8; /* Amarillo claro */
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p:first-child {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .question p {
+            color: #ffffff;
+        }
+
+        .question li {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .content-section p {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        footer {
+            background-color: #007ba8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <h1>Práctica 2.</h1>
+    </div>
+    <nav>
+        <a href="index.html">Página principal</a>
+        <span class="dot">·</span>
+        <a href="portada.html">Portada</a>
+        <span class="dot">·</span>
+        <a href="introduccion.html">Introducción</a>
+        <span class="dot">·</span>
+        <a href="objetivos.html">Objetivos</a>
+        <span class="dot">·</span>
+        <a href="materiales.html">Materiales y equipo</a>
+        <span class="dot">·</span>
+        <!-- Menú desplegable dentro de "Desarrollo" -->
+        <div class="dropdown">
+            <button class="dropbtn">Desarrollo</button>
+            <div class="dropdown-content">
+                <a href="actividad1.html">Actividad 1</a>
+                <a href="actividad2.html">Actividad 2</a>
+                <a href="actividad3.html">Actividad 3</a>
+                <a href="actividad4.html">Actividad 4</a>
+            </div>
+        </div>
+        <span class="dot">·</span>
+        <a href="cuestionario.html" class="active">Cuestionario</a>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Cuestionario</h1>
+        <div class="underline"></div>
+    </div>
+</section>
+
+<!-- Scroll Button -->
+<button onclick="scrollToBottom()" class="scroll-button" title="Ir al final">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="7 18 12 13 17 18"></polyline>
+        <line x1="12" y1="5" x2="12" y2="18"></line>
+    </svg>
+</button>
+
+<!-- Main Content -->
+<main>
+    <section class="content-section">
+        <p>Como tarea previa al desarrollo de esta práctica, conteste el siguiente cuestionario:</p>
+
+        <div class="question">
+            <p>1. ¿Qué son los monosacáridos?</p>
+            <p>Son los azúcares simples que son la unidad básica de los carbohidratos. Estos son los componentes más simples de los carbohidratos y no se pueden descomponer en unidades más pequeñas por hidrólisis.</p>
+        </div>
+
+        <div class="question">
+            <p>2. ¿Qué tipo de enlace presentan los carbohidratos?</p>
+            <p>Glucosídico, este es de tipo covalente que se forma a través de moléculas de carbohidratos.</p>
+        </div>
+
+        <div class="question">
+            <p>3. Mencione el nombre del azúcar considerado la unidad precursora de los polisacáridos.</p>
+            <p>Glucosa es el azúcar considerado la unidad precursora de los polisacáridos.</p>
+        </div>
+
+        <div class="question">
+            <p>4. Escriba el nombre de dos polisacáridos más abundantes en la naturaleza.</p>
+            <p>Celulosa y el almidón.</p>
+        </div>
+
+        <div class="question">
+            <p>5. Los animales y las plantas almacenan glucosa respectivamente, en forma de:</p>
+            <p>Los animales almacenan glucosa en forma de glucógeno, las plantas lo hacen en forma de almidón.</p>
+        </div>
+
+        <div class="question">
+            <p>6. ¿Qué nombre reciben las unidades estructurales de las proteínas?</p>
+            <p>Aminoácidos.</p>
+        </div>
+
+        <div class="question">
+            <p>7. Mencione el nombre del enlace que une a los aminoácidos en una proteína.</p>
+            <p>Enlace peptídico.</p>
+        </div>
+
+        <div class="question">
+            <p>8. Escriba los factores que afectan la acción biológica de las proteínas.</p>
+            <ul>
+                <li>la temperatura</li>
+                <li>el pH</li>
+                <li>la presencia de sustancias químicas</li>
+                <li>la fuerza iónica</li>
+                <li>la presión</li>
+                <li>la concentración de la proteína y otras moléculas.</li>
+            </ul>
+        </div>
+        <div class="question">
+            <p>9. Escriba en qué consiste el proceso de saponificación. </p>
+            <p>Proceso químico mediante el cual las grasas y aceites reaccionan con una base. Esta reacción hidrólisis de un éster en medio básico produce sales de ácidos grasos y glicerol.</p>
+        </div>
+        <div class="question">
+            <p>10. ¿Cuál es la diferencia entre los lípidos saponificables e insaponificables? </p>
+            <p>En que los lípidos saponificables contienen ácidos grasos en su estructura por lo cual si pueden sucumbir a saponificarse y por otro lado los lípidos insaponificables no contienen ácidos grasos en su estructura por lo cual no pueden sucumbir a saponificarse.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Carrera de Biología - Universidad El Salvador. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

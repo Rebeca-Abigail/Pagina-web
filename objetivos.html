@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción</title>
+    <style>
+        /* Reset y estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #007ba8;
+            color: #333;
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .logo h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header nav a,
+        header nav span.active {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover,
+        header nav .active {
+            color: #007ba8;
+        }
+
+        header .dot {
+            color: white;
+            margin: 0 10px;
+        }
+
+        header .search-icon {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            color: white;
+            font-size: 16px;
+            padding: 14px 16px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            color: #007ba8;
+            padding: 12px 16px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e8f5e9;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #007ba8;
+        }
+
+    
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('imagen10.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .underline {
+            width: 100px;
+            height: 5px;
+            background-color: #007ba8;
+            margin: 10px auto;
+        }
+
+       
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007ba8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .scroll-button:hover {
+            background-color: #005f73;
+        }
+
+        
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 120px auto 0 auto;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+
+        .content-section p {
+            margin-bottom: 20px;
+        }
+
+        
+        footer {
+            background-color: #007ba8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+       
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<header>
+    <div class="logo">
+        <h1>Práctica 2.</h1>
+    </div>
+    <nav>
+        <a href="index.html">Página principal</a>
+        <span class="dot">·</span>
+        <a href="portada.html">Portada</a>
+        <span class="dot">·</span>
+        <a href="introduccion.html" >Introducción</a>
+        <span class="dot">·</span>
+        <a href="objetivos.html" class="active">Objetivos</a>
+        <span class="dot">·</span>
+        <a href="materiales.html">Materiales y equipo</a>
+        <span class="dot">·</span>
+        
+        <div class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Desarrollo</button>
+            <div class="dropdown-content" role="menu">
+                <a href="actividad1.html">Actividad 1</a>
+                <a href="actividad2.html">Actividad 2</a>
+                <a href="actividad3.html">Actividad 3</a>
+                <a href="actividad4.html">Actividad 4</a>
+            </div>
+        </div>
+        <span class="dot">·</span>
+        <a href="cuestionario.html">Cuestionario</a>
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Objetivos</h1>
+        <div class="underline"></div>
+    </div>
+</section>
+
+<!-- Scroll Button -->
+<button onclick="scrollToBottom()" class="scroll-button" title="Ir al final">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="7 18 12 13 17 18"></polyline>
+        <line x1="12" y1="5" x2="12" y2="18"></line>
+    </svg>
+</button>
+
+<!-- Main Content -->
+<main>
+    <section class="content-section">
+        <p>Al desarrollar y completar la  práctica el estudiante será capaz de: </p>
+        <p>1. Explicar la importancia del agua en los procesos vitales de los seres vivos. </p>
+        <p>2. Identificar azúcares reductores con el reactivo de Benedict. </p>
+        <p>3. Nombrar el compuesto quimico utilizado para identificar un polisacarido. </p>
+        <p>4. Explicar a qué se debe la coloración del almidón al agregarie el reactivo de Lugol </p>
+        <p>5. Establecer qué compuesto orgánico se identifica con el reactivo de Lugol  </p>
+        <p>6. Identificar lípidos utilizando el reactivo de Sudán !!! </p>
+        <p>7. Nombrar el compuesto orgánico presente al utilizar el reactivo de Beureth.  </p>
+        <p>8. Comprobar que la desnaturalización de las proteínas se da por acción de agences ácidos, básicos, solventes orgánicos y calor.  </p>
+</main>
+
+<footer>
+    <p>&copy; 2025 Carrera de Biología - Universidad El Salvador. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
